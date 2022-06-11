@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "WebWorker"],
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "baseUrl": "./client",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "client/constants": ["src/application/constants.ts"],
+      "client/components": ["src/application/components/index.ts"],
+      "client/libs/*": ["src/application/libs/*"],
+      "client/modules/*": ["src/application/modules/*"],
+      "client/scenes/*": ["src/application/scenes/*"],
+      "client/ui": ["src/application/ui"],
+      "client/interfaces": ["src/interfaces/index.ts"]
+    }
+  },
+  "include": ["client/**/*"],
+  "exclude": ["node_modules"]
+}

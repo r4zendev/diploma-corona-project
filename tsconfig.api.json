@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./api",
+    "esModuleInterop": true,
+    "paths": {
+      "api/*": ["src/*"]
+    }
+  },
+  "include": ["api/**/*"]
+}

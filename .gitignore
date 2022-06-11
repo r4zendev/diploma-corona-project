@@ -1,0 +1,74 @@
+# OS X
+.DS_Store*
+Icon?
+!client/**/**/Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+null/
+
+# Linux
+.directory
+*~
+
+# Editors
+.idea
+.vscode
+.history
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Generated coverage
+lib-cov
+coverage
+
+# node-waf configuration
+.lock-wscript
+
+# Snyk cache data
+.iac-data
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Compiled
+dist/
+build/
+
+# Dependency directory
+node_modules
+
+# Environment config
+.env
+
+# Nightwatch UI Tests
+test/reports
+
+# Lib - so it doesn't get recomitted by accident
+lib
+
+# Package-lock is OS specific, so we don't want to commit it
+package-lock.json
+yarn-error.log
+
+# Ignore folder with temporary files
+tmp
+
+# Ignore yarn files
+.yarnrc
+.yarn
+
+.dccache
+
+# Ignore unwanted whatever
+__*
