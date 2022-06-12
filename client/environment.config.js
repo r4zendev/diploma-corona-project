@@ -27,6 +27,7 @@ const schema = yup.object({
   PROTOCOL: yup.string().oneOf(['http', 'https']).default('http'),
 
   API_URL: yup.string().required(),
+  GOOGLE_API_KEY: yup.string().required(),
 
   PROJECT_SOURCE_DIR: yup.string().default('src'),
   PROJECT_OUTPUT_DIR: yup.string().default('dist'),
@@ -50,6 +51,7 @@ module.exports = {
   IS_TEST: envs.NODE_ENV === 'test',
 
   API_URL: envs.API_URL,
+  GOOGLE_API_KEY: envs.GOOGLE_API_KEY,
 
   PROJECT: {
     OUTPUT_DIR: envs.PROJECT_OUTPUT_DIR,

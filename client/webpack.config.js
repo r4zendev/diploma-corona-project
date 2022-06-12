@@ -171,6 +171,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: ENVIRONMENT.APPLICATION.TITLE,
       description: ENVIRONMENT.APPLICATION.DESCRIPTION,
+      googleApiKey: ENVIRONMENT.GOOGLE_API_KEY,
       filename: path.resolve(OUTPUT_DIR, 'index.html'),
       template: path.resolve(SOURCE_DIR, 'public/index.html'),
       inject: true,
