@@ -1,35 +1,20 @@
-import { Breadcrumbs, Typography } from '@mui/material';
-import { Language, Timeline } from '@mui/icons-material';
+import { Breadcrumb, Typography } from 'antd';
+import { StockOutlined, GlobalOutlined } from '@ant-design/icons';
+const { Link } = Typography;
 
 export interface SwitcherProps {}
 
 export function Switcher({}: SwitcherProps) {
   return (
-    <Breadcrumbs aria-label="breadcrumb">
-      <Typography
-        color="text.secondary"
-        sx={{
-          textDecoration: 'underline',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-        }}
-      >
-        <Language sx={{ mr: 0.5 }} fontSize="inherit" />
-        Switch to graphs
-      </Typography>
-      <Typography
-        color="text.secondary"
-        sx={{
-          textDecoration: 'underline',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-        }}
-      >
-        <Timeline sx={{ mr: 0.5 }} fontSize="inherit" />
-        Show map
-      </Typography>
-    </Breadcrumbs>
+    <Breadcrumb className="home__content__filters__breadcrumbs">
+      <Breadcrumb.Item>
+        <StockOutlined />
+        <Link>Switch to charts</Link>
+      </Breadcrumb.Item>
+      <Breadcrumb.Item>
+        <GlobalOutlined />
+        <Link>Show map</Link>
+      </Breadcrumb.Item>
+    </Breadcrumb>
   );
 }

@@ -4,8 +4,8 @@ export function LogoIcon() {
       xmlns="http://www.w3.org/2000/svg"
       id="svg"
       version="1.1"
-      width="80"
-      height="80"
+      width="40"
+      height="40"
       viewBox="0, 0, 400,400"
     >
       <g id="svgg">

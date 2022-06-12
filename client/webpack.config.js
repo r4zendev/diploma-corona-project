@@ -51,7 +51,7 @@ const server = {
     overlay: false,
   },
   proxy: {
-    [ENVIRONMENT.API_URL]: 'http://localhost:3000',
+    [ENVIRONMENT.API_URL]: 'http://localhost:9000',
   },
 };
 
@@ -125,15 +125,20 @@ module.exports = {
             },
           },
           'sass-loader',
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  'primary-color': '#1DA57A',
+                  'link-color': '#1DA57A',
+                  'border-radius-base': '2px',
+                },
+                javascriptEnabled: true,
+              },
+            },
+          },
         ],
-      },
-      {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
-        loader: 'url-loader',
-        options: {
-          limit: 8192,
-          name: 'images/[name].[contenthash:8].[ext]',
-        },
       },
     ],
   },

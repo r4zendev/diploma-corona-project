@@ -1,0 +1,52 @@
+@import 'antd/dist/antd.less';
+
+header,
+header * {
+  display: flex;
+  align-items: center;
+}
+
+#root,
+body,
+html {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home,
+.info,
+.news {
+  position: relative;
+  background: #fff;
+  padding: 0 calc(70vw - 945px);
+}
+
+.home__content {
+  margin: 0 auto;
+}
+
+.home__content__title {
+  margin: 8px 0;
+}
+
+.home__content__filters__filter-wrapper > * {
+  margin: 0 10px;
+}
+
+.home__content__filters__breadcrumbs {
+  margin-top: 8px;
+}
+
+.ant-breadcrumb li:last-child {
+  a {
+    color: #1da57a;
+  }
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.info__content__main {
+  font-size: 20px;
+}

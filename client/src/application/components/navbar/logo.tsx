@@ -1,22 +1,25 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from 'antd';
+const { Title } = Typography;
 
 import { LogoIcon } from './logo.icon';
 
 export function Logo() {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box sx={{ mr: 2 }}>
+    <div>
+      <div>
         <LogoIcon />
-      </Box>
-      <Typography
-        variant="h4"
-        noWrap
-        component="h1"
-        fontSize={20}
-        fontWeight={900}
+      </div>
+      <Title
+        level={1}
+        style={{
+          margin: '0 10px',
+          fontSize: 30,
+          fontWeight: 700,
+          color: '#fff',
+        }}
       >
         CoronaNews
-      </Typography>
-    </Box>
+      </Title>
+    </div>
   );
 }

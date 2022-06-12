@@ -1,1 +1,3 @@
-export * from './root';
+export * from './info';
+export * from './news';
+export * from './main';

@@ -1,11 +1,13 @@
-import { Navbar, Skeleton } from 'client/components';
+import { Layout } from 'antd';
 
-import { Root } from './scenes';
+import { Navbar } from 'client/components';
+import { Root } from './root';
 
 export function Application() {
   return (
-    <Skeleton navbar={<Navbar />}>
+    <Layout>
+      <Navbar />
       <Root />
-    </Skeleton>
+    </Layout>
   );
 }

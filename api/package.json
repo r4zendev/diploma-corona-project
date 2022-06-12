@@ -2,10 +2,12 @@
   "name": "api",
   "version": "1.0.0",
   "private": true,
+  "node": "^14.17.0",
   "scripts": {
     "ts-check": "tsc --project tsconfig.json --noEmit",
     "start": "ts-node --require tsconfig-paths/register ./src/index.ts",
-    "start:dev": "nodemon --require tsconfig-paths/register ./src/index.ts"
+    "start:dev": "nodemon --require tsconfig-paths/register ./src/index.ts",
+    "script": "ts-node --require tsconfig-paths/register ./src/script.ts"
   },
   "dependencies": {
     "apollo-server-express": "^3.8.2",
@@ -13,10 +15,9 @@
     "cheerio": "^1.0.0-rc.11",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "graphql": "^16.5.0",
-    "lodash.flatten": "^4.4.0",
     "lodash.merge": "^4.6.2",
-    "mongodb": "^4.7.0"
+    "mongodb": "^4.7.0",
+    "snoowrap": "^1.23.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.2.0",

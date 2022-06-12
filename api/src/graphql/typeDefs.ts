@@ -2,16 +2,30 @@ import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
   type Stats {
-    confirmed: Int!
-    deaths: Int!
-    recovered: Int!
-    vaccinated: Int!
-    active: Int!
-    newCases: Int!
-    newDeaths: Int!
+    confirmed: Float!
+    deaths: Float!
+    recovered: Float!
+    active: Float!
+    newCases: Float!
+    newDeaths: Float!
+  }
+
+  type StatsVaccinated {
+    vaccinated: Float!
+  }
+
+  input StatsDateInput {
+    startDate: String!
+    endDate: String!
+  }
+
+  type News {
+    title: String!
   }
 
   type Query {
-    stats(timeline: String, country: String): Stats!
+    stats(timeline: StatsDateInput, country: String): Stats!
+    statsVaccinated(country: String): StatsVaccinated!
+    news(country: String): [News]!
   }
 `;

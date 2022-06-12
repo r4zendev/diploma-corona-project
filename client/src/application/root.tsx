@@ -2,16 +2,18 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { ROUTES } from 'client/constants';
 
-import { Main } from './main';
+import { Info, Main, News } from './scenes';
 
 export function Root() {
-  console.log('qwewqe');
   return (
     <Routes>
       <Route path={ROUTES.ROOT}>
         <Route index element={<Main />} />
-        {/* <Route path={ROUTES.INGESTION.CREATE} element={<IngestionCreate />} />
-        <Route path={ROUTES.INGESTION.DETAILS} element={<IngestionCreate />} /> */}
+        <Route path={ROUTES.INFO} element={<Info />} />
+        <Route path={ROUTES.NEWS} element={<News />} />
+        {/* <Route path={ROUTES.CURING} element={<Curing />} />
+        <Route path={ROUTES.STATUS} element={<Status />} />
+        <Route path={ROUTES.ABOUT} element={<About />} /> */}
       </Route>
 
       <Route path={ROUTES.ROOT} element={<Navigate to={ROUTES.ROOT} />} />

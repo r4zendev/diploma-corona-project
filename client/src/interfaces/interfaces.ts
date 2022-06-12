@@ -1,7 +1,6 @@
-import { Moment } from 'moment';
+import { CountryCode } from './enums';
 
 export interface Filters {
-  country: string;
-  vaccinated: boolean;
-  time: Moment;
+  country: CountryCode;
+  timestamp: { startDate: string; endDate: string };
 }

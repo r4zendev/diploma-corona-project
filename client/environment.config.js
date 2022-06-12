@@ -13,18 +13,14 @@ const {
 // may be unnecessary to read .env file on production
 // envs would be available inside Docker image
 if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({ path: path.resolve('./.env.sample') });
+  dotenv.config({ path: path.resolve('./.env') });
 }
 
 const schema = yup.object({
-  DEBUG_BUILD: yup.boolean().default(false),
-
   NODE_ENV: yup
     .string()
     .oneOf(['development', 'production', 'test'])
     .default('development'),
-
-  BUILD_VERSION: yup.string().required(),
 
   HOST: yup.string().required(),
   PORT: yup.number(),

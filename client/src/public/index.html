@@ -1,55 +1,57 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-  <meta charset='utf-8' />
-  <title><%= htmlWebpackPlugin.options.title %></title>
-  <meta
-    name='viewport'
-    content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no'
-  />
-  <meta name='description'
-        content='<%= htmlWebpackPlugin.options.description %>' />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta
+      name="viewport"
+      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="<%= htmlWebpackPlugin.options.description %>"
+    />
 
-  <meta property='og:title' content='<%= htmlWebpackPlugin.options.title %>'>
-  <meta property='og:description'
-        content='<%= htmlWebpackPlugin.options.description %>'>
-  <meta property='og:type' content='website'>
+    <meta
+      property="og:title"
+      content="<%= htmlWebpackPlugin.options.title %>"
+    />
+    <meta
+      property="og:description"
+      content="<%= htmlWebpackPlugin.options.description %>"
+    />
+    <meta property="og:type" content="website" />
 
+    <style>
+      noscript {
+        display: block;
+        font-size: 1em;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 800;
+        padding: 1em 0.5em;
+        border: 1px solid red;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      For full functionality of this site it is necessary to enable JavaScript.
+      Here are the
+      <a href="https://www.enable-javascript.com" target="_blank">
+        instructions how to enable JavaScript in your web browser</a
+      >.
+    </noscript>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a>
+        to improve your experience and security.
+      </p>
+    <![endif]-->
 
-  <link rel='stylesheet'
-        href='https://unpkg.com/@pluralsight/ps-design-system-normalize' />
-
-  <style>
-    noscript {
-      display: block;
-      font-size: 1em;
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 800;
-      padding: 1em 0.5em;
-      border: 1px solid red;
-      background-color: #fff;
-    }
-  </style>
-</head>
-<body>
-<noscript>
-  For full functionality of this site it is necessary to enable JavaScript.
-  Here are the
-  <a href='https://www.enable-javascript.com' target='_blank'>
-    instructions how to enable JavaScript in your web browser</a
-  >.
-</noscript>
-<!--[if lte IE 9]>
-<p class='browserupgrade'>
-  You are using an <strong>outdated</strong> browser. Please
-  <a href='https://browsehappy.com/'>upgrade your browser</a>
-  to improve your experience and security.
-</p>
-<![endif]-->
-
-<!-- Application content -->
-<div id='root'></div>
-</body>
+    <!-- Application content -->
+    <div id="root"></div>
+  </body>
 </html>
-
