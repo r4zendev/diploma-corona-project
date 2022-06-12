@@ -4,7 +4,6 @@ import {
   ExperimentOutlined,
   HomeOutlined,
   InfoCircleOutlined,
-  QuestionOutlined,
 } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -34,11 +33,6 @@ const pages = [
     name: 'News',
     url: '/news',
     icon: <CopyOutlined style={{ marginRight: 8 }} />,
-  },
-  {
-    name: 'About us',
-    url: '/about',
-    icon: <QuestionOutlined style={{ marginRight: 8 }} />,
   },
 ];
 

@@ -21,3 +21,28 @@ export async function mapCountryCode(twoLetter: string) {
     throw error;
   }
 }
+
+export async function getCountryCodeMap() {
+  try {
+    const { data: html } = await axios.get(
+      'https://www.iban.com/country-codes'
+    );
+
+    const $ = cheerio.load(html);
+
+    const returnObj = [];
+
+    $('td').each(function (i) {
+      if (i % 4 === 0) {
+        returnObj.push({
+          countryName: $(this).text(),
+          countryCode: $(this).next().text(),
+        });
+      }
+    });
+
+    return returnObj;
+  } catch (error) {
+    throw error;
+  }
+}

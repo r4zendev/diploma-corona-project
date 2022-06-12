@@ -20,12 +20,35 @@ export const typeDefs = gql`
   }
 
   type News {
+    type: String!
     title: String!
+    url: String!
+    createdDate: Int!
+    imageUrl: String!
+    byString: String!
+  }
+
+  type StatsCached {
+    regionName: String
+    countryName: String!
+    lat: Float!
+    lng: Float!
+    confirmed: Float!
+    deaths: Float!
+    recovered: Float!
+    active: Float!
+  }
+
+  type CountryCodeMap {
+    countryName: String!
+    countryCode: String!
   }
 
   type Query {
     stats(timeline: StatsDateInput, country: String): Stats!
     statsVaccinated(country: String): StatsVaccinated!
-    news(country: String): [News]!
+    statsCached: [StatsCached]!
+    news: [News]!
+    getCountryCodeMap: [CountryCodeMap]!
   }
 `;

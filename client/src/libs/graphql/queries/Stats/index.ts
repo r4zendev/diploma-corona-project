@@ -20,3 +20,18 @@ export const STATS_VACCINATED = gql`
     }
   }
 `;
+
+export const STATS_CACHED = gql`
+  query StatsCached {
+    statsCached {
+      regionName
+      countryName
+      lat
+      lng
+      confirmed
+      deaths
+      recovered
+      active
+    }
+  }
+`;

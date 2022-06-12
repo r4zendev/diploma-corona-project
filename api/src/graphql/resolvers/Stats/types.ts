@@ -16,6 +16,17 @@ export interface StatsData {
   newDeaths: number;
 }
 
+export interface StatsCachedData {
+  regionName: string;
+  countryName: string;
+  lat: number;
+  lng: number;
+  confirmed: number;
+  deaths: number;
+  recovered: number;
+  active: number;
+}
+
 export interface VaccinatedStatsData {
   vaccinated: number;
 }

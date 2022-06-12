@@ -18,7 +18,9 @@ html {
 
 .home,
 .info,
-.news {
+.news,
+.curing,
+.status {
   position: relative;
   background: #fff;
   padding: 0 calc(70vw - 945px);
@@ -28,7 +30,11 @@ html {
   margin: 0 auto;
 }
 
-.home__content__title {
+.home__content__title,
+.info__content__title,
+.news__content__title,
+.curing__content__title,
+.status__content__title {
   margin: 8px 0;
 }
 
@@ -49,4 +55,45 @@ html {
 
 .info__content__main {
   font-size: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  display: block;
+}
+
+.curing__content__row {
+  margin-top: 16px;
+}
+
+#map-container {
+  min-width: 100%;
+  min-height: 500px;
+  margin: 20px auto;
+}
+
+.map-loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.status__content__title-area {
+  * {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  > :last-child {
+    margin-right: 10px;
+  }
+
+  display: flex;
+  justify-content: space-between;
 }

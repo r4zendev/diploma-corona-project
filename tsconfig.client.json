@@ -9,11 +9,10 @@
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "client/constants": ["src/application/constants.ts"],
+      "client/core": ["src/application/core/index.ts"],
       "client/components": ["src/application/components/index.ts"],
       "client/libs/*": ["src/libs/*"],
-      "client/modules/*": ["src/application/modules/*"],
       "client/scenes/*": ["src/application/scenes/*"],
-      "client/ui": ["src/application/ui"],
       "client/interfaces": ["src/interfaces/index.ts"]
     }
   },

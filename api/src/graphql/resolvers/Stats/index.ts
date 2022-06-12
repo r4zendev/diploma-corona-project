@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+import csv from 'csvtojson';
 import axios from 'axios';
 
 import { mapCountryCode } from 'api/libs/util';
@@ -7,7 +10,10 @@ import {
   VaccinatedResponse,
   VaccinatedStatsArgs,
   VaccinatedStatsData,
+  StatsCachedData,
 } from './types';
+import { mapCachedJson } from 'api/libs/util';
+import { ParsedCsvToJson } from 'api/libs/types';
 
 export const statsResolvers = {
   Query: {
@@ -112,6 +118,52 @@ export const statsResolvers = {
       }
 
       return { vaccinated };
+    },
+    statsCached: async (): Promise<StatsCachedData[]> => {
+      const yesterdayDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
+
+      const fileName = `${yesterdayDate
+        .getMonth()
+        .toString()
+        .padStart(2, '0')}-${yesterdayDate
+        .getDate()
+        .toString()
+        .padStart(2, '0')}-${yesterdayDate.getFullYear()}.csv`;
+
+      const csvStream = await axios.get(
+        `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${fileName}`,
+        { responseType: 'stream' }
+      );
+
+      const appDir = path.dirname(require.main.filename);
+
+      const csvPath = path.resolve(appDir, 'temp', fileName);
+
+      try {
+        fs.promises.stat(csvPath);
+
+        const jsonArray = await csv().fromFile(csvPath);
+
+        return mapCachedJson(jsonArray);
+      } catch (error) {
+        const writer = fs.createWriteStream(csvPath);
+
+        csvStream.data.pipe(writer);
+
+        const json: ParsedCsvToJson[] = await new Promise((resolve, reject) => {
+          writer.on('close', async () => {
+            const jsonArray = await csv().fromFile(csvPath);
+
+            resolve(jsonArray);
+          });
+
+          writer.on('error', (error) => {
+            reject(error);
+          });
+        });
+
+        return mapCachedJson(json);
+      }
     },
   },
 };

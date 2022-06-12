@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { ROUTES } from 'client/constants';
 
-import { Info, Main, News } from './scenes';
+import { Info, Main, News, Curing, Status } from './scenes';
 
 export function Root() {
   return (
@@ -11,9 +11,8 @@ export function Root() {
         <Route index element={<Main />} />
         <Route path={ROUTES.INFO} element={<Info />} />
         <Route path={ROUTES.NEWS} element={<News />} />
-        {/* <Route path={ROUTES.CURING} element={<Curing />} />
+        <Route path={ROUTES.CURING} element={<Curing />} />
         <Route path={ROUTES.STATUS} element={<Status />} />
-        <Route path={ROUTES.ABOUT} element={<About />} /> */}
       </Route>
 
       <Route path={ROUTES.ROOT} element={<Navigate to={ROUTES.ROOT} />} />
