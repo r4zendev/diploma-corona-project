@@ -2,9 +2,7 @@ import { Breadcrumb, Typography } from 'antd';
 import { StockOutlined, GlobalOutlined } from '@ant-design/icons';
 const { Link } = Typography;
 
-export interface SwitcherProps {}
-
-export function Switcher({}: SwitcherProps) {
+export function Switcher() {
   return (
     <Breadcrumb className="home__content__filters__breadcrumbs">
       <Breadcrumb.Item>
