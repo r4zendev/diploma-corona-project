@@ -24,8 +24,6 @@ export function CovidMap({ position }: CovidMapProps) {
   const renderMap = async () => {
     const mapContainer = document.getElementById('map-container');
 
-    console.log(position);
-
     const map = new google.maps.Map(mapContainer, {
       center: new google.maps.LatLng({
         lat: position.latitude,

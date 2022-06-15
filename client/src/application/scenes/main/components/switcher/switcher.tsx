@@ -1,6 +1,7 @@
-import { Breadcrumb, Typography } from 'antd';
-import { StockOutlined, GlobalOutlined } from '@ant-design/icons';
-const { Link } = Typography;
+import { Breadcrumb } from 'antd';
+import { Link } from 'react-router-dom';
+import { StockOutlined } from '@ant-design/icons';
+import { ROUTES } from 'client/constants';
 
 export interface SwitcherProps {}
 
@@ -9,11 +10,7 @@ export function Switcher({}: SwitcherProps) {
     <Breadcrumb className="home__content__filters__breadcrumbs">
       <Breadcrumb.Item>
         <StockOutlined />
-        <Link>Switch to charts</Link>
-      </Breadcrumb.Item>
-      <Breadcrumb.Item>
-        <GlobalOutlined />
-        <Link>Show map</Link>
+        <Link to={ROUTES.STATUS}>Switch to charts</Link>
       </Breadcrumb.Item>
     </Breadcrumb>
   );

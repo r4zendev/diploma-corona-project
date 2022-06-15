@@ -1,11 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { Typography } from 'antd';
 const { Title } = Typography;
 
-import { LogoIcon } from './logo.icon';
+import { LogoIcon } from '../icons';
 
 export function Logo() {
+  const navigate = useNavigate();
+
+  const onHeaderClick = () => {
+    navigate('/');
+  };
+
   return (
-    <div>
+    <div onClick={onHeaderClick} className="header-logo">
       <div>
         <LogoIcon />
       </div>

@@ -45,7 +45,7 @@ export const typeDefs = gql`
   }
 
   type Query {
-    stats(timeline: StatsDateInput, country: String): Stats!
+    stats(timestamp: StatsDateInput, country: String): Stats!
     statsVaccinated(country: String): StatsVaccinated!
     statsCached: [StatsCached]!
     news: [News]!

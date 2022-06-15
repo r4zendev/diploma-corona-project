@@ -72,3 +72,5 @@ tmp
 
 # Ignore unwanted whatever
 __*
+
+**/temp

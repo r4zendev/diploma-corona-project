@@ -75,7 +75,9 @@ export function Main() {
                     key.slice(1).replace(/[A-Z]/g, ' $&')
                 }
               >
-                {value && value.toString()}
+                {value && value > 1
+                  ? value.toString()
+                  : 'Data is not available.'}
               </Card>
             </List.Item>
           )}

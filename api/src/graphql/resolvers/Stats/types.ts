@@ -1,5 +1,5 @@
 export interface StatsArgs {
-  timeline: { startDate: string; endDate: string } | null; // maybe Moment
+  timestamp: { startDate: string; endDate: string } | null; // maybe Moment
   country: string | null; // Already mapped to locale value from front-end
 }
 

@@ -19,14 +19,14 @@ export const statsResolvers = {
   Query: {
     stats: async (
       _root: undefined,
-      { timeline, country }: StatsArgs
+      { timestamp, country }: StatsArgs
     ): Promise<StatsData> => {
       try {
         const returnObj: Partial<StatsData> = {};
 
-        if (timeline && !country) {
+        if (timestamp && !country) {
           throw new Error(
-            'If specifying timeline, you should also specify a country to filter data for.'
+            'If specifying timestamp, you should also specify a country to filter data for.'
           );
         }
 
@@ -41,9 +41,9 @@ export const statsResolvers = {
           returnObj.active = data[0].activeCases;
         }
 
-        if (timeline) {
+        if (timestamp) {
           const { data } = await axios.get(
-            `http://api.coronatracker.com/v5/analytics/trend/country?countryCode=${country}&startDate=${timeline.startDate}&endDate=${timeline.endDate}`
+            `http://api.coronatracker.com/v5/analytics/trend/country?countryCode=${country}&startDate=${timestamp.startDate}&endDate=${timestamp.endDate}`
           );
 
           returnObj.confirmed =

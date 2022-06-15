@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 export const STATS = gql`
-  query Stats($country: String, $timeline: StatsDateInput) {
-    stats(country: $country, timeline: $timeline) {
+  query Stats($country: String, $timestamp: StatsDateInput) {
+    stats(country: $country, timestamp: $timestamp) {
       confirmed
       deaths
       recovered

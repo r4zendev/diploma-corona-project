@@ -1,16 +1,21 @@
 import { useCallback } from 'react';
 import { Avatar, Layout, List, Typography } from 'antd';
+import { useQuery } from '@apollo/react-hooks';
 const { Content } = Layout;
 const { Title, Text } = Typography;
 
-import { useQuery } from '@apollo/react-hooks';
 import { NEWS } from 'client/libs/graphql/queries';
 import { News as NewsData } from 'client/libs/graphql/queries/News/__generated__/News';
+import { LogoIconSmall } from 'client/components';
 
 export function News() {
   const { data, loading } = useQuery<NewsData>(NEWS, {
     fetchPolicy: 'cache-and-network',
   });
+
+  const isExistingAvatar = (imageUrl: string) => {
+    return imageUrl && !(imageUrl === 'default');
+  };
 
   const getNews = useCallback(() => {
     if (!loading && !data?.news) {
@@ -42,21 +47,30 @@ export function News() {
           pageSize: 10,
           hideOnSinglePage: true,
         }}
-        renderItem={(item) => (
-          <List.Item key={item.createdDate}>
-            <List.Item.Meta
-              avatar={
-                <a href={item.url}>
-                  <Avatar src={item.imageUrl} />
-                </a>
-              }
-              title={<a href={item.url}>{item.type}</a>}
-              description={item.title}
-            >
-              <Text>{item.byString}</Text>
-            </List.Item.Meta>
-          </List.Item>
-        )}
+        renderItem={(item) => {
+          return (
+            <List.Item key={item.createdDate}>
+              <List.Item.Meta
+                avatar={
+                  <a href={item.url}>
+                    {isExistingAvatar(item.imageUrl) ? (
+                      <Avatar src={item.imageUrl} />
+                    ) : (
+                      <Avatar
+                        icon={<LogoIconSmall />}
+                        style={{ backgroundColor: 'rgba(29,165,122, 0.12)' }}
+                      />
+                    )}
+                  </a>
+                }
+                title={<a href={item.url}>{item.type}</a>}
+                description={item.title}
+              >
+                <Text>{item.byString}</Text>
+              </List.Item.Meta>
+            </List.Item>
+          );
+        }}
       />
     );
   }, [loading]);

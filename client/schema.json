@@ -519,7 +519,7 @@
             "description": null,
             "args": [
               {
-                "name": "timeline",
+                "name": "timestamp",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
